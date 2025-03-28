@@ -69,5 +69,5 @@ A Chrome extension that provides intelligent translation and grammar analysis wi
 - DeepSeek API key
 
 ## License
-
+-wzh
 MIT 
