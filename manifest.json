@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "ChineseToEnglish Translator",
+  "version": "1.0",
+  "description": "Translate Chinese text to English with context awareness",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://api.deepseek.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+} 

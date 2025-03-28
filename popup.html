@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ChineseToEnglish Translator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 360px;
+      padding: 15px;
+      font-size: 15px;
+    }
+    
+    h1 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 16.5px;
+    }
+    
+    input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 15px;
+    }
+    
+    button {
+      background-color: #4285F4;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    
+    button:hover {
+      background-color: #3367D6;
+    }
+    
+    .status {
+      margin-top: 10px;
+      padding: 8px;
+      border-radius: 4px;
+      display: none;
+      font-size: 15px;
+    }
+    
+    .success {
+      background-color: #E6F4EA;
+      color: #137333;
+      display: block;
+    }
+    
+    .error {
+      background-color: #FCE8E6;
+      color: #C5221F;
+      display: block;
+    }
+    
+    .instructions {
+      font-size: 15px;
+      color: #5F6368;
+      margin-top: 15px;
+      border-top: 1px solid #eee;
+      padding-top: 10px;
+    }
+    
+    .shortcut {
+      background-color: #f1f3f4;
+      border-radius: 4px;
+      padding: 2px 5px;
+      font-family: monospace;
+      font-size: 15px;
+    }
+    
+    .feature-group {
+      margin-bottom: 12px;
+    }
+    
+    .feature-title {
+      font-weight: bold;
+      margin-bottom: 4px;
+      font-size: 16.5px;
+    }
+    
+    .tabs {
+      display: flex;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .tab {
+      padding: 8px 12px;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      font-size: 16.5px;
+    }
+    
+    .tab.active {
+      border-bottom: 2px solid #4285F4;
+      color: #4285F4;
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Intelligent Translation Assistant</h1>
+  
+  <div class="tabs">
+    <div class="tab active" data-tab="settings">Settings</div>
+    <div class="tab" data-tab="shortcuts">Shortcuts</div>
+    <div class="tab" data-tab="about">About</div>
+  </div>
+  
+  <div class="tab-content active" id="settings">
+    <div class="form-group">
+      <label for="apiKey">DeepSeek API Key:</label>
+      <input type="password" id="apiKey" placeholder="Enter your DeepSeek API key">
+    </div>
+    
+    <button id="saveButton">Save Settings</button>
+    
+    <div id="status" class="status"></div>
+  </div>
+  
+  <div class="tab-content" id="shortcuts">
+    <div class="instructions">
+      <div class="feature-group">
+        <div class="feature-title">Translate Text at Cursor</div>
+        <p>Double-click <span class="shortcut">Ctrl</span> key</p>
+        <p>Automatically detects Chinese/English and translates</p>
+      </div>
+      
+      <div class="feature-group">
+        <div class="feature-title">Translate Selected Text</div>
+        <p>Triple-click <span class="shortcut">Ctrl</span> key</p>
+        <p>Shows translation in popup for selected text</p>
+      </div>
+      
+      <div class="feature-group">
+        <div class="feature-title">English Grammar Analysis</div>
+        <p>Press <span class="shortcut">Shift</span> key</p>
+        <p>Analyzes grammar structure of selected English text</p>
+      </div>
+      
+      <div class="feature-group">
+        <div class="feature-title">English Grammar Correction</div>
+        <p>Double-click <span class="shortcut">Shift</span> key</p>
+        <p>Corrects grammar and improves expression of selected English text</p>
+      </div>
+      
+      <div class="feature-group">
+        <div class="feature-title">Close All Popups</div>
+        <p>Single-click <span class="shortcut">Ctrl</span> key</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-content" id="about">
+    <div class="instructions">
+      <p>This extension uses DeepSeek API for smart translation and grammar analysis, supporting bidirectional translation between Chinese and English.</p>
+      <p>Features:</p>
+      <ul>
+        <li>Smart text language detection</li>
+        <li>Support for selected text and cursor position translation</li>
+        <li>English grammar analysis</li>
+        <li>Intelligent popup positioning system</li>
+        <li>Quick action buttons for selected text</li>
+      </ul>
+      <p>Version: 1.4.0</p>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html> 
